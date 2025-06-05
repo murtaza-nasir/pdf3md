@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# PDF3MD Docker Management Script
+# Ink2MD Docker Management Script
 
 set -e
 
@@ -39,11 +39,11 @@ check_docker() {
 # Function to start production environment
 start_production() {
     local domain=${1:-localhost}
-    print_status "Starting PDF3MD in production mode with domain: $domain..."
+    print_status "Starting Ink2MD in production mode with domain: $domain..."
     HOST_DOMAIN=$domain docker compose up -d
     
     if [ $? -eq 0 ]; then
-        print_success "PDF3MD is now running!"
+        print_success "Ink2MD is now running!"
         echo ""
         echo "🌐 Frontend: http://$domain:3000"
         echo "🔧 Backend API: http://$domain:6201"
@@ -51,7 +51,7 @@ start_production() {
         echo "To view logs: docker compose logs -f"
         echo "To stop: docker compose down"
     else
-        print_error "Failed to start PDF3MD"
+        print_error "Failed to start Ink2MD"
         exit 1
     fi
 }
@@ -59,11 +59,11 @@ start_production() {
 # Function to start development environment
 start_development() {
     local domain=${1:-localhost}
-    print_status "Starting PDF3MD in development mode with domain: $domain..."
+    print_status "Starting Ink2MD in development mode with domain: $domain..."
     HOST_DOMAIN=$domain docker compose -f docker-compose.dev.yml up -d
     
     if [ $? -eq 0 ]; then
-        print_success "PDF3MD development environment is now running!"
+        print_success "Ink2MD development environment is now running!"
         echo ""
         echo "🌐 Frontend (with hot-reload): http://$domain:5173"
         echo "🔧 Backend API: http://$domain:6201"
@@ -71,14 +71,14 @@ start_development() {
         echo "To view logs: docker compose -f docker-compose.dev.yml logs -f"
         echo "To stop: docker compose -f docker-compose.dev.yml down"
     else
-        print_error "Failed to start PDF3MD development environment"
+        print_error "Failed to start Ink2MD development environment"
         exit 1
     fi
 }
 
 # Function to stop all environments
 stop_all() {
-    print_status "Stopping all PDF3MD environments..."
+    print_status "Stopping all Ink2MD environments..."
     
     # Stop production
     if docker compose ps -q > /dev/null 2>&1; then
@@ -92,12 +92,12 @@ stop_all() {
         docker compose -f docker-compose.dev.yml down
     fi
     
-    print_success "All PDF3MD environments stopped"
+    print_success "All Ink2MD environments stopped"
 }
 
 # Function to show status
 show_status() {
-    print_status "PDF3MD Environment Status:"
+    print_status "Ink2MD Environment Status:"
     echo ""
     
     echo "Production Environment:"
@@ -120,7 +120,7 @@ show_status() {
 rebuild() {
     local env="$1"
     local domain="${2:-localhost}"
-    print_status "Rebuilding and starting PDF3MD..."
+    print_status "Rebuilding and starting Ink2MD..."
     
     if [ "$env" = "dev" ]; then
         docker compose -f docker-compose.dev.yml down
@@ -135,7 +135,7 @@ rebuild() {
 
 # Function to show help
 show_help() {
-    echo "PDF3MD Docker Management Script"
+    echo "Ink2MD Docker Management Script"
     echo ""
     echo "Usage: $0 [COMMAND] [build] [DOMAIN]"
     echo ""

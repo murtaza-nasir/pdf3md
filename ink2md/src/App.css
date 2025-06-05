@@ -6,8 +6,8 @@
 body {
   margin: 0;
   min-height: 100vh;
-  width: 100%; /* Added */
-  background: linear-gradient(135deg, #f0f4ff 0%, #e6eeff 100%);
+  width: 100%;
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -38,7 +38,7 @@ body {
 .top-bar {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  border-bottom: 1px solid rgba(233, 213, 255, 0.6);
   padding: 16px 24px;
   display: flex;
   align-items: center;
@@ -46,14 +46,14 @@ body {
   position: sticky;
   top: 0;
   z-index: 50;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px rgba(139, 92, 246, 0.1);
   width: 100%;
 }
 
 .sidebar-toggle {
-  background: rgba(59, 130, 246, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  color: #3b82f6;
+  background: rgba(147, 197, 253, 0.15);
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  color: #60a5fa;
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
@@ -66,8 +66,8 @@ body {
 }
 
 .sidebar-toggle:hover {
-  background: rgba(59, 130, 246, 0.15);
-  border-color: rgba(59, 130, 246, 0.3);
+  background: rgba(147, 197, 253, 0.25);
+  border-color: rgba(147, 197, 253, 0.4);
   transform: translateY(-1px);
 }
 
@@ -84,14 +84,14 @@ body {
   margin: 0;
   font-size: 1.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .file-select-btn {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%);
   color: white;
   border: none;
   padding: 12px 20px;
@@ -103,15 +103,15 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(147, 197, 253, 0.4);
   min-width: 140px;
   justify-content: center;
 }
 
 .file-select-btn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px -5px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 8px 25px -5px rgba(147, 197, 253, 0.5);
 }
 
 .file-select-btn:disabled {
@@ -131,12 +131,39 @@ body {
   gap: 16px;
 }
 
+.settings-btn {
+  background: rgba(156, 163, 175, 0.15);
+  border: 1px solid rgba(156, 163, 175, 0.3);
+  color: #6b7280;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+}
+
+.settings-btn:hover {
+  background: rgba(156, 163, 175, 0.25);
+  border-color: rgba(156, 163, 175, 0.4);
+  color: #374151;
+  transform: translateY(-1px);
+}
+
+.settings-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
 .mode-switcher {
   display: flex;
-  background: rgba(241, 245, 249, 0.8);
+  background: rgba(248, 250, 252, 0.8);
   border-radius: 12px;
   padding: 2px;
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  border: 1px solid rgba(233, 213, 255, 0.6);
 }
 
 .mode-btn {
@@ -148,19 +175,19 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  color: #64748b;
-  white-space: nowrap; /* Restored for short pill button text */
+  color: #6b7280;
+  white-space: nowrap;
 }
 
 .mode-btn:hover {
-  color: #3b82f6;
-  background: rgba(59, 130, 246, 0.1);
+  color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.1);
 }
 
 .mode-btn.active {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  background: linear-gradient(135deg, #a855f7 0%, #8b5cf6 100%);
   color: white;
-  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 2px 4px rgba(139, 92, 246, 0.3);
 }
 
 .markdown-to-word-container {
@@ -187,8 +214,8 @@ body {
   margin: 0 0 8px;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1e293b;
-  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  color: #374151;
+  background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -205,24 +232,24 @@ body {
   flex: 1;
   min-height: 400px;
   padding: 24px;
-  border: 2px solid rgba(226, 232, 240, 0.8);
+  border: 2px solid rgba(233, 213, 255, 0.6);
   border-radius: 16px;
   font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
   font-size: 0.95rem;
   line-height: 1.6;
-  background: linear-gradient(145deg, rgba(248, 250, 252, 0.8) 0%, rgba(241, 245, 249, 0.8) 100%);
-  color: #1e293b;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.9) 100%);
+  color: #374151;
   resize: vertical;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
 }
 
 .markdown-input:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-  background: rgba(255, 255, 255, 0.9);
+  border-color: #a855f7;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.15);
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .markdown-input::placeholder {
@@ -243,7 +270,7 @@ body {
 }
 
 .convert-btn {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: linear-gradient(135deg, #86efac 0%, #22c55e 100%);
   color: white;
   border: none;
   padding: 14px 28px;
@@ -255,15 +282,15 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(134, 239, 172, 0.4);
   min-width: 180px;
   justify-content: center;
 }
 
 .convert-btn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px -5px rgba(16, 185, 129, 0.4);
+  box-shadow: 0 8px 25px -5px rgba(134, 239, 172, 0.5);
 }
 
 .convert-btn:disabled {
@@ -283,9 +310,9 @@ body {
 }
 
 .clear-btn {
-  background: rgba(239, 68, 68, 0.1);
-  color: #dc2626;
-  border: 1px solid rgba(239, 68, 68, 0.2);
+  background: rgba(252, 165, 165, 0.2);
+  color: #ef4444;
+  border: 1px solid rgba(252, 165, 165, 0.4);
   padding: 14px 24px;
   border-radius: 12px;
   font-size: 1rem;
@@ -295,8 +322,8 @@ body {
 }
 
 .clear-btn:hover:not(:disabled) {
-  background: rgba(239, 68, 68, 0.15);
-  border-color: rgba(239, 68, 68, 0.3);
+  background: rgba(252, 165, 165, 0.3);
+  border-color: rgba(252, 165, 165, 0.5);
   transform: translateY(-1px);
 }
 
@@ -333,7 +360,7 @@ body {
 }
 
 .universal-drop-zone.dragging {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 197, 253, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.05) 0%, rgba(196, 181, 253, 0.05) 100%);
 }
 
 .universal-drop-zone.dragging::before {
@@ -343,9 +370,9 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  border: 3px dashed #3b82f6;
+  border: 3px dashed #a855f7;
   border-radius: 20px;
-  background: rgba(59, 130, 246, 0.05);
+  background: rgba(168, 85, 247, 0.05);
   z-index: 1;
   pointer-events: none;
 }
@@ -381,8 +408,8 @@ body {
 }
 
 .drop-zone {
-  border: 2px dashed #cbd5e1;
-  background: linear-gradient(145deg, rgba(248, 250, 252, 0.8) 0%, rgba(241, 245, 249, 0.8) 100%);
+  border: 2px dashed #d1d5db;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.9) 100%);
   border-radius: 20px;
   padding: 60px 40px;
   text-align: center;
@@ -397,7 +424,7 @@ body {
   overflow: hidden;
   min-height: 200px;
   justify-content: center;
-  width: 100%; /* Added: Ensures it fills .app-wrapper */
+  width: 100%;
 }
 
 .drop-zone::before {
@@ -407,16 +434,16 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, transparent 30%, rgba(59, 130, 246, 0.05) 50%, transparent 70%);
+  background: linear-gradient(45deg, transparent 30%, rgba(168, 85, 247, 0.05) 50%, transparent 70%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .drop-zone:hover {
-  border-color: #3b82f6;
-  background: linear-gradient(145deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 197, 253, 0.05) 100%);
+  border-color: #a855f7;
+  background: linear-gradient(145deg, rgba(168, 85, 247, 0.05) 0%, rgba(196, 181, 253, 0.05) 100%);
   transform: translateY(-2px);
-  box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 20px 25px -5px rgba(168, 85, 247, 0.15);
 }
 
 .drop-zone:hover::before {
@@ -424,10 +451,10 @@ body {
 }
 
 .drop-zone.dragging {
-  border-color: #2563eb;
-  background: linear-gradient(145deg, rgba(37, 99, 235, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+  border-color: #8b5cf6;
+  background: linear-gradient(145deg, rgba(139, 92, 246, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
   transform: scale(1.02);
-  box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.25);
 }
 
 .drop-zone.loading {
@@ -444,7 +471,7 @@ body {
 }
 
 .drop-zone:hover svg {
-  color: #3b82f6;
+  color: #a855f7;
   transform: scale(1.1);
 }
 
@@ -484,13 +511,13 @@ body {
 .welcome-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 32px;
-  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 10px 25px rgba(168, 85, 247, 0.3);
 }
 
 .welcome-icon svg {
@@ -502,9 +529,9 @@ body {
 .welcome-content h2 {
   font-size: 2rem;
   font-weight: 700;
-  color: #1e293b;
+  color: #374151;
   margin: 0 0 16px;
-  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -531,8 +558,8 @@ body {
 .loading-spinner {
   width: 48px;
   height: 48px;
-  border: 4px solid rgba(59, 130, 246, 0.2);
-  border-top: 4px solid #3b82f6;
+  border: 4px solid rgba(168, 85, 247, 0.2);
+  border-top: 4px solid #a855f7;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -593,7 +620,7 @@ body {
 }
 
 .copy-button {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%);
   color: white;
   border: none;
   padding: 12px 20px;
@@ -605,18 +632,18 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(147, 197, 253, 0.4);
 }
 
 .copy-button:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px -5px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 8px 25px -5px rgba(147, 197, 253, 0.5);
 }
 
 .copy-button.copied {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.3);
+  background: linear-gradient(135deg, #86efac 0%, #22c55e 100%);
+  box-shadow: 0 4px 6px -1px rgba(134, 239, 172, 0.4);
 }
 
 .copy-button svg {

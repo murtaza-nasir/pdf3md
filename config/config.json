@@ -1,0 +1,90 @@
+{
+  "app_settings": {
+    "monitored_input_dir": "/app/input_pdfs",
+    "processed_output_dir": "/app/output_markdown",
+    "default_output_pattern": "YYYY-MM-DD-[OriginalFileName].md",
+    "custom_output_pattern": null,
+    "global_retry_attempts": 2,
+    "enable_directory_monitoring": false
+  },
+  "active_services": {
+    "htr_provider_id": "anthropic_claude_sonnet",
+    "formatting_provider_id": "anthropic_claude_sonnet",
+    "vlm_provider_id": "anthropic_claude_sonnet"
+  },
+  "prompt_templates": {
+    "htr_default": "htr_default",
+    "htr_academic": "htr_academic",
+    "htr_handwritten": "htr_handwritten",
+    "htr_forms": "htr_forms",
+    "formatting_clean": "formatting_clean",
+    "formatting_academic": "formatting_academic",
+    "formatting_notes": "formatting_notes",
+    "vlm_direct": "vlm_direct",
+    "vlm_academic": "vlm_academic",
+    "vlm_handwritten": "vlm_handwritten"
+  },
+  "processing_profiles": {
+    "high_quality": {
+      "htr_service": "anthropic_claude_sonnet",
+      "formatting_service": "anthropic_claude_sonnet",
+      "vlm_service": "anthropic_claude_sonnet",
+      "prompt_set": "academic",
+      "description": "Highest quality processing using Claude 3.5 Sonnet"
+    },
+    "balanced": {
+      "htr_service": "anthropic_claude_haiku",
+      "formatting_service": "anthropic_claude_haiku",
+      "vlm_service": "anthropic_claude_haiku",
+      "prompt_set": "clean",
+      "description": "Balanced quality and cost using Claude Haiku"
+    },
+    "cost_effective": {
+      "htr_service": "ollama_llava",
+      "formatting_service": "ollama_mistral",
+      "vlm_service": "ollama_llava",
+      "prompt_set": "default",
+      "description": "Cost-effective processing using local Ollama models"
+    }
+  },
+  "ai_provider_configs": {
+    "ollama_llava": {
+      "display_name": "Ollama (LLaVA for HTR)",
+      "type": "ollama",
+      "api_base_url": "http://10.0.0.97:11434",
+      "model": "llava:7b",
+      "is_htr_capable": true,
+      "is_formatting_capable": false,
+      "enabled": true
+    },
+    "ollama_mistral": {
+      "display_name": "Ollama (Mistral for Formatting)",
+      "type": "ollama",
+      "api_base_url": "http://10.0.0.97:11434",
+      "model": "mistral:7b",
+      "is_htr_capable": false,
+      "is_formatting_capable": true,
+      "enabled": true
+    },
+    "anthropic_claude_haiku": {
+      "display_name": "Anthropic (Claude Haiku)",
+      "type": "anthropic",
+      "api_key": "${ANTHROPIC_API_KEY}",
+      "model": "claude-3-haiku-20240307",
+      "is_htr_capable": true,
+      "is_formatting_capable": true,
+      "is_vlm_capable": true,
+      "enabled": true
+    },
+    "anthropic_claude_sonnet": {
+      "display_name": "Anthropic (Claude 3.5 Sonnet)",
+      "type": "anthropic",
+      "api_key": "${ANTHROPIC_API_KEY}",
+      "model": "claude-3-5-sonnet-20241022",
+      "is_htr_capable": true,
+      "is_formatting_capable": true,
+      "is_vlm_capable": true,
+      "enabled": true
+    }
+  }
+}

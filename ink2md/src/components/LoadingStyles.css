@@ -29,13 +29,13 @@
 }
 
 .progress-circle-bg {
-  stroke: rgba(59, 130, 246, 0.1);
+  stroke: rgba(168, 85, 247, 0.15);
   stroke-width: 8;
   fill: none;
 }
 
 .progress-circle-fill {
-  stroke: #3b82f6;
+  stroke: #a855f7;
   stroke-width: 8;
   fill: none;
   stroke-linecap: round;
@@ -46,7 +46,7 @@
   position: absolute;
   font-size: 1.25rem;
   font-weight: 700;
-  color: #3b82f6;
+  color: #a855f7;
   text-align: center;
 }
 
@@ -68,15 +68,15 @@
   gap: 8px;
   margin: 16px 0;
   padding: 16px;
-  background: rgba(248, 250, 252, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
-  border: 1px solid rgba(226, 232, 240, 0.6);
+  border: 1px solid rgba(233, 213, 255, 0.6);
   min-width: 280px;
 }
 
 .filename {
   font-size: 0.95rem;
-  color: #1e293b;
+  color: #374151;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -97,10 +97,10 @@
   font-size: 0.9rem;
   color: #64748b;
   font-weight: 500;
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(168, 85, 247, 0.1);
   padding: 6px 12px;
   border-radius: 20px;
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .progress-bar {
@@ -115,7 +115,7 @@
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  background: linear-gradient(90deg, #a855f7, #c084fc);
   border-radius: 4px;
   transition: width 0.5s ease;
   position: relative;
@@ -163,8 +163,8 @@
 
   .time-estimate span {
     color: #94a3b8;
-    background: rgba(59, 130, 246, 0.2);
-    border-color: rgba(59, 130, 246, 0.3);
+    background: rgba(168, 85, 247, 0.2);
+    border-color: rgba(168, 85, 247, 0.3);
   }
 
   .progress-bar {
@@ -172,15 +172,15 @@
   }
 
   .progress-percentage {
-    color: #60a5fa;
+    color: #c084fc;
   }
 
   .progress-circle-bg {
-    stroke: rgba(59, 130, 246, 0.2);
+    stroke: rgba(168, 85, 247, 0.2);
   }
 
   .progress-circle-fill {
-    stroke: #60a5fa;
+    stroke: #c084fc;
   }
 }
 

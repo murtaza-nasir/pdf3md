@@ -46,7 +46,7 @@ stop_frontend() {
   local process_name="Frontend server (Vite/Node)"
   # Use a pattern that specifically matches your Vite process based on your ps output
   # Adjust this pattern if necessary to be more specific to your project.
-  local pattern="node .*vite.*pdf3md"
+  local pattern="node .*vite.*ink2md"
 
   echo "Attempting to find and stop $process_name matching '$pattern'..."
   

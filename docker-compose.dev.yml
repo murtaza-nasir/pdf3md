@@ -1,9 +1,9 @@
 services:
   backend:
     build:
-      context: ./pdf3md
+      context: ./ink2md
       dockerfile: Dockerfile.backend
-    container_name: pdf3md-backend-dev
+    container_name: ink2md-backend-dev
     ports:
       - "6201:6201"
     environment:
@@ -11,22 +11,27 @@ services:
       - FLASK_ENV=development
       - FLASK_DEBUG=1
       - TZ=America/Chicago
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
     volumes:
-      - ./pdf3md:/app
-      - ./pdf3md/temp:/app/temp
+      - ./ink2md:/app
+      - ./ink2md/temp:/app/temp
+      - ./config:/app/config
+      - ./data:/app/data
+      - ./input_pdfs:/app/input_pdfs
+      - ./output_markdown:/app/output_markdown
     command: python app.py
     restart: unless-stopped
 
   frontend:
     image: node:18-alpine
-    container_name: pdf3md-frontend-dev
+    container_name: ink2md-frontend-dev
     working_dir: /app
     ports:
       - "5173:5173"
     environment:
       - NODE_ENV=development
     volumes:
-      - ./pdf3md:/app
+      - ./ink2md:/app
       - /app/node_modules
     command: sh -c "npm install && npm run dev"
     depends_on:
@@ -35,4 +40,4 @@ services:
 
 networks:
   default:
-    name: pdf3md-dev-network
+    name: ink2md-dev-network

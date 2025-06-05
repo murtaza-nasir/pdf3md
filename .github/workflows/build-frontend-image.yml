@@ -9,7 +9,7 @@ on:
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: learnedmachine/pdf3md-frontend
+  IMAGE_NAME: learnedmachine/ink2md-frontend
 
 jobs:
   build:
@@ -51,8 +51,8 @@ jobs:
         id: build-and-push
         uses: docker/build-push-action@v4
         with:
-          context: ./pdf3md # Assuming frontend Dockerfile context is pdf3md/
-          file: ./pdf3md/Dockerfile.frontend # Path to your frontend Dockerfile
+          context: ./ink2md # Assuming frontend Dockerfile context is ink2md/
+          file: ./ink2md/Dockerfile.frontend # Path to your frontend Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

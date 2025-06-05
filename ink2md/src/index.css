@@ -1,0 +1,83 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Catppuccin-inspired color variables */
+  --color-bg-primary: #f5f3ff;
+  --color-bg-secondary: #ede9fe;
+  --color-primary: #93c5fd;
+  --color-primary-dark: #60a5fa;
+  --color-secondary: #f9a8d4;
+  --color-secondary-dark: #ec4899;
+  --color-success: #86efac;
+  --color-success-dark: #22c55e;
+  --color-warning: #fde047;
+  --color-warning-dark: #eab308;
+  --color-error: #fca5a5;
+  --color-error-dark: #ef4444;
+  --color-text-primary: #374151;
+  --color-text-secondary: #6b7280;
+  --color-border-light: #e5e7eb;
+  --color-border: #d1d5db;
+  --color-purple: #a855f7;
+  --color-purple-light: #c084fc;
+
+  color-scheme: light;
+  color: var(--color-text-primary);
+  background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: var(--color-purple);
+  text-decoration: inherit;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-purple-light);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: var(--color-text-primary);
+}
+
+button {
+  border-radius: 12px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(147, 197, 253, 0.3);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 2px solid var(--color-purple);
+  outline-offset: 2px;
+}
+
+/* Remove dark mode overrides since we're focusing on light pastels */

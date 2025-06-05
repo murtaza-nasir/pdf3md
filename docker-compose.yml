@@ -1,7 +1,7 @@
 services:
   backend:
-    image: docker.io/learnedmachine/pdf3md-backend:latest 
-    container_name: pdf3md-backend
+    image: docker.io/learnedmachine/ink2md-backend:latest
+    container_name: ink2md-backend
     ports:
       - "6201:6201"
     environment:
@@ -9,7 +9,11 @@ services:
       - FLASK_ENV=production
       - TZ=America/Chicago
     volumes:
-      - ./pdf3md/temp:/app/temp
+      - ./ink2md/temp:/app/temp
+      - ./config:/app/config
+      - ./data:/app/data
+      - ./input_pdfs:/app/input_pdfs
+      - ./output_markdown:/app/output_markdown
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:6201/"]
@@ -19,8 +23,8 @@ services:
       start_period: 40s
 
   frontend:
-    image: docker.io/learnedmachine/pdf3md-frontend:latest 
-    container_name: pdf3md-frontend
+    image: docker.io/learnedmachine/ink2md-frontend:latest
+    container_name: ink2md-frontend
     ports:
       - "3000:3000"
     environment: {}
@@ -36,4 +40,4 @@ services:
 
 networks:
   default:
-    name: pdf3md-network
+    name: ink2md-network

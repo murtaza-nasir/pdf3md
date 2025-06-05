@@ -114,13 +114,16 @@ venv.bak/
 dmypy.json
 
 # Application specific
-pdf3md/temp*.pdf
-pdf3md/.pids/
-pdf3md/backend.log
-pdf3md/frontend.log
+ink2md/temp*.pdf
+ink2md/.pids/
+ink2md/backend.log
+ink2md/frontend.log
 .md
 
 # Others
 !README.md
 .gitignore
 notes.md
+.kilocode
+.project-planning
+CLAUDE.md

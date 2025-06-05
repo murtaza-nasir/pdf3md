@@ -2,17 +2,18 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 380px; /* Can be adjusted */
-  max-height: 400px; /* Max height before scrolling */
-  background-color: #2d3748; /* Dark background - similar to sidebar */
-  color: #e2e8f0; /* Light text color */
-  border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 6px 10px rgba(0, 0, 0, 0.25);
+  width: 380px;
+  max-height: 400px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+  color: #374151;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(168, 85, 247, 0.15), 0 10px 10px -5px rgba(168, 85, 247, 0.1);
   z-index: 1000;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid #4a5568; /* Darker border */
+  border: 1px solid rgba(233, 213, 255, 0.6);
+  backdrop-filter: blur(20px);
   transition: all 0.3s ease-in-out;
 }
 
@@ -25,22 +26,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px;
-  border-bottom: 1px solid #4a5568;
-  background-color: #1a202c; /* Even darker header */
-  cursor: pointer; /* Allow clicking header to toggle minimize */
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(233, 213, 255, 0.5);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.05) 0%, rgba(196, 181, 253, 0.05) 100%);
+  cursor: pointer;
 }
 
 .modal-header h4 {
   margin: 0;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #cbd5e0;
+  color: #374151;
 }
 
 .modal-header .summary-info {
   font-size: 0.8rem;
-  color: #a0aec0;
+  color: #6b7280;
 }
 
 .action-buttons {
@@ -52,31 +53,34 @@
 .clear-all-btn {
   background: none;
   border: none;
-  color: #a0aec0;
-  font-size: 1rem; /* Icon size */
+  color: #6b7280;
+  font-size: 1rem;
   cursor: pointer;
-  padding: 4px;
+  padding: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
 .toggle-minimize-btn:hover,
 .clear-all-btn:hover {
-  color: #e2e8f0;
-  background-color: #4a5568;
+  color: #374151;
+  background: rgba(156, 163, 175, 0.15);
 }
 
 .clear-all-btn {
-  font-size: 0.8rem; /* Text size for clear button if not using icon */
-  padding: 5px 8px;
-  background-color: #c53030; /* Darker red */
-  color: #fed7d7;
+  font-size: 0.8rem;
+  padding: 6px 10px;
+  background: rgba(252, 165, 165, 0.2);
+  color: #ef4444;
+  border: 1px solid rgba(252, 165, 165, 0.4);
 }
 .clear-all-btn:hover {
-  background-color: #9b2c2c;
-  color: #fff;
+  background: rgba(252, 165, 165, 0.3);
+  border-color: rgba(252, 165, 165, 0.5);
+  color: #dc2626;
 }
 
 
@@ -95,16 +99,16 @@
 .file-status-item {
   display: flex;
   align-items: center;
-  padding: 8px 15px; /* Compact padding */
-  border-bottom: 1px solid #4a5568; /* Separator */
-  gap: 10px;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(233, 213, 255, 0.4);
+  gap: 12px;
   transition: background-color 0.2s ease;
 }
 .file-status-item:last-child {
   border-bottom: none;
 }
 .file-status-item:hover {
-  background-color: #4a5568; /* Hover effect */
+  background: rgba(168, 85, 247, 0.05);
 }
 
 
@@ -130,7 +134,7 @@
 .file-status-item .file-name {
   font-size: 0.85rem;
   font-weight: 500;
-  color: #cbd5e0;
+  color: #374151;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -138,7 +142,7 @@
 
 .file-status-item .file-size {
   font-size: 0.75rem;
-  color: #a0aec0;
+  color: #6b7280;
   white-space: nowrap;
   margin-left: 5px;
 }
@@ -155,24 +159,24 @@
   white-space: nowrap;
 }
 
-.status-progress-text { /* For (xx%) */
+.status-progress-text {
   font-size: 0.75rem;
-  color: #718096; /* Muted progress percentage */
+  color: #6b7280;
 }
 
 
 .progress-bar-container-thin {
-  width: 100%; /* Takes full width of its column */
-  height: 5px; /* Thin bar */
-  background-color: #4a5568; /* Darker background for progress bar */
-  border-radius: 2.5px;
+  width: 100%;
+  height: 6px;
+  background: rgba(233, 213, 255, 0.3);
+  border-radius: 3px;
   overflow: hidden;
 }
 
 .progress-bar-fill-thin {
   height: 100%;
-  background-color: #4299e1; /* Blue for progress, matches theme */
-  border-radius: 2.5px;
+  background: linear-gradient(90deg, #a855f7, #c084fc);
+  border-radius: 3px;
   transition: width 0.3s ease-in-out;
 }
 
@@ -185,50 +189,52 @@
 
 .file-item-actions button {
   background: none;
-  border: 1px solid #718096; /* Darker border for buttons */
-  color: #a0aec0;
-  padding: 3px 6px;
-  border-radius: 4px;
-  font-size: 0.7rem; /* Smaller font for buttons */
+  border: 1px solid rgba(233, 213, 255, 0.6);
+  color: #6b7280;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.7rem;
   cursor: pointer;
-  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  transition: all 0.2s ease;
 }
 
 .file-item-actions button:hover {
-  background-color: #718096;
-  border-color: #a0aec0;
-  color: #e2e8f0;
+  background: rgba(168, 85, 247, 0.1);
+  border-color: rgba(168, 85, 247, 0.3);
+  color: #374151;
 }
 
 .file-item-actions .retry-btn {
-  border-color: #4299e1;
-  color: #4299e1;
+  border-color: rgba(147, 197, 253, 0.6);
+  color: #60a5fa;
 }
 .file-item-actions .retry-btn:hover {
-  background-color: #2b6cb0; /* Darker blue on hover */
-  color: #bee3f8;
+  background: rgba(147, 197, 253, 0.15);
+  border-color: rgba(147, 197, 253, 0.8);
+  color: #3b82f6;
 }
 
 .file-item-actions .remove-btn {
-  border-color: #c53030;
-  color: #c53030;
+  border-color: rgba(252, 165, 165, 0.6);
+  color: #ef4444;
 }
 .file-item-actions .remove-btn:hover {
-  background-color: #9b2c2c; /* Darker red on hover */
-  color: #fed7d7;
+  background: rgba(252, 165, 165, 0.15);
+  border-color: rgba(252, 165, 165, 0.8);
+  color: #dc2626;
 }
 
 
 /* Status-specific text colors */
-.status-completed .status-text { color: #48bb78; } /* Green */
-.status-error .status-text { color: #f56565; } /* Red */
+.status-completed .status-text { color: #22c55e; }
+.status-error .status-text { color: #ef4444; }
 .status-uploading .status-text,
-.status-processing .status-text { color: #4299e1; } /* Blue */
+.status-processing .status-text { color: #60a5fa; }
 .status-queued .status-text,
-.status-skipped .status-text { color: #a0aec0; } /* Grey */
+.status-skipped .status-text { color: #6b7280; }
 
 .status-error .file-name {
-  color: #f56565; /* Highlight filename in red on error */
+  color: #ef4444;
 }
 
 
@@ -238,15 +244,15 @@
 }
 
 .file-status-list::-webkit-scrollbar-track {
-  background: #1a202c; /* Dark track */
-  border-radius: 0 0 8px 0;
+  background: rgba(248, 250, 252, 0.5);
+  border-radius: 0 0 16px 0;
 }
 
 .file-status-list::-webkit-scrollbar-thumb {
-  background: #4a5568; /* Darker thumb */
+  background: rgba(233, 213, 255, 0.6);
   border-radius: 3px;
 }
 
 .file-status-list::-webkit-scrollbar-thumb:hover {
-  background: #718096;
+  background: rgba(233, 213, 255, 0.8);
 }
