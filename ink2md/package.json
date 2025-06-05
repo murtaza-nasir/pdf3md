@@ -1,7 +1,9 @@
 {
   "name": "ink2md",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.5.0",
+  "description": "PDF to Markdown Converter - Version 0.5 Beta",
+  "author": "Sarah Wolff",
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
@@ -11,7 +13,8 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
