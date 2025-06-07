@@ -1,5 +1,5 @@
-Flask==3.0.0
-Flask-CORS==4.0.0
-pymupdf4llm==0.0.17
+Flask==3.0
+Flask-CORS==4.0
+pymupdf4llm>=0.0.17
 pymupdf>=1.24.10
 pypandoc>=1.11
